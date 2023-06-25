@@ -1,0 +1,28 @@
+<!Doctype html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>base HTML</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'base.css' %}">
+    </head>
+    <body>
+        <nav>
+            <label class="logo">TCS</label>
+            <ul>
+                <li><a href="{% url 'index' %}" class="active">Brand</a></li>
+                <li><a href="{% url 'basic_app:relative' %}">relative</a></li>
+                <li><a href="{% url 'admin:index' %}">admin</a></li>
+                <li><a href="{% url 'basic_app:other' %}">other</a></li>
+            </ul>
+
+        </nav>
+        <h1>Base is super template!</h1>
+        <div class="container">
+            {% block body_block%}
+
+            {% endblock %}
+        </div>
+    </body>
+</html>
